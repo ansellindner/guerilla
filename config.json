@@ -1,0 +1,11 @@
+{
+	"PORT": 80,
+	"btc": {
+		"port": 8332,
+		"host": "localhost",
+		"user": "bitcoinrpc",
+		"pass": "PASSWORD",
+		"timeout": 30000,
+		"miniuser": "miniuser"
+	}
+}

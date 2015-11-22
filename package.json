@@ -1,0 +1,29 @@
+{
+  "name": "guerilla-mini",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./guerilla.js",
+  "license": "MIT",
+  "author": "Ansel Lindner <ansellindner@protonmail.ch",
+  "homepage": "https://github.com/ansellindner/guerilla#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bitcoinjs-lib": "^2.1.3",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  },
+  "keywords": [
+    "bitcoin",
+    "mini",
+    "interface",
+    "expressjs",
+    "nodejs",
+    "bitcoinjs-lib",
+    "platform"
+  ],
+  "bugs": {
+    "url": "https://github.com/ansellindner/guerilla/issues"
+  }
+}
