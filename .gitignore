@@ -11,5 +11,6 @@ client_components
 # Optional npm cache directory
 .npm
 
-# Mini todo
+# Mini Misc
 TODO.txt
+DOCS/md-cheatsheet.md
