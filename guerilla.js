@@ -6,38 +6,27 @@
  * MIT Licensed
  */
 
-var fs = require('fs');
+'use strict';
 
+//================================= MODULE DEPENDENCIES ==
 var express = require('express');
-var bitcoin = require('bitcoinjs-lib');
-var config = require('./config.json');
+var config = require('./config');
+var checkUpdate = require('./bin/boot');
 
+// Do a bunch of tasks when you start node
+// Each task can be run from the commandline too
+bootTasks();
+
+//================================= PARENT EXPRESS ==
+// parent express instance
 var mini = express();
-mini.set('view engine', 'ejs');
 
-// enable to the /api routes
-var api = require('./api')(mini);
-// enable the docs & ui routes
-var client = require('./client/app-list')(mini);
+//================================= ROUTES ==
+// bring in the lib folder and pass it the mini instance
+var routes = require('./lib')(mini);
 
-
-mini.listen(config.PORT);
-console.log('');
-console.log('    __  ____       _    ______                            __  _            ');
-console.log('   /  |/  (_)___  (_)  / ____/___  ____ ___  ____  __  __/ /_(_)___  ____ _');
-console.log('  / /|_/ / / __ \\/ /  / /   / __ \\/ __ `__ \\/ __ \\/ / / / __/ / __ \\/ __ `/');
-console.log(' / /  / / / / / / /  / /___/ /_/ / / / / / / /_/ / /_/ / /_/ / / / / /_/ / ');
-console.log('/_/  /_/_/_/ /_/_/   \\____/\\____/_/ /_/ /_/ .___/\\__,_/\\__/_/_/ /_/\\__, /  ');
-console.log('                                         /_/                      /____/   ');
-console.log('');
-console.log('Your Mini can now be accessed via your browser at "localhost" (port ' + config.PORT + ')');
-console.log('===========================================================================');
-console.log('');
-console.log('================================');
-console.log('');
-console.log('The api can be found at localhost/api');
-console.log('');
-console.log('Supporting docs can be found at localhost/docs');
-console.log('');
-console.log('================================');
-console.log('');
+//================================= SERVER LISTEN ==
+mini.listen(config.system.PORT);
+// print message to console
+var bootMessage = require('./bin/boot-message');
+bootMessage();
