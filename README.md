@@ -4,11 +4,21 @@ Guerilla is built on Node.js. It is optimized for use on the Bitcoin Mini.
 
 ## Installation
 
-`npm install guerilla`
+To load the npm dependencies:
+
+`npm install`
+
+To load the bower dependencies:
+
+`bower install`
+
+To run:
+
+`node guerilla`
 
 ## Setup
 
-Consumer setup is plug-and-play. When the Bitcoin Mini is delivered, the customer plugs in the two included cables in this order 1) ethernet 2) power. The Mini will bootup. When the Node.js server is running, the Mini discovers it's own internal network NAT IP and sends an email to the email associated with the purchase of the Mini. This is all done internally on the Mini itself and never connects to a Mini Computing server. When the customer recieves the email, they can simply point any browser from a network connected device at the IP contained in the email.
+Retail consumer setup is plug-and-play. When the Bitcoin Mini is delivered, the customer plugs in the two included cables in this order 1) ethernet 2) power. The Mini will bootup. When the Node.js server is running, the Mini discovers it's own internal network NAT IP and sends an email to the email associated with the purchase of the Mini. This is all done internally on the Mini itself and never connects to a Mini Computing server. When the customer recieves the email, they can simply point any browser from a network connected device at the IP contained in the email.
 
 If the user doesn't have access to the email used for purchase, there is a manaul way to find the internal IP address by logging into the router's UI and finding devices on the network. More detailed directions are included with purchase, or can easily be found on the internet.
 
