@@ -11,7 +11,7 @@
 /*================================= MODULE DEPENDENCIES ==*/
 var fs = require('fs-extra');
 var getJson = require('get-json');
-var config = require('../config');
+var config = require('../../config');
 
 /**
  * Check with BitcoinMini.com to see if there is a new version available.

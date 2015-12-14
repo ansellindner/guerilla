@@ -2,7 +2,6 @@
   "admin": "",
   "adminpw": "",
   "email": "ansellindner@gmail.com",
-  "users": {},
   "PORT": 8444,
   "version": {
     "current": "1.4.0",

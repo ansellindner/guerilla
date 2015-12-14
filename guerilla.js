@@ -11,7 +11,7 @@
 //================================= MODULE DEPENDENCIES ==
 var express = require('express');
 var config = require('./config');
-var checkUpdate = require('./bin/boot');
+var bootTasks = require('./bin/boot');
 
 // Do a bunch of tasks when you start node
 // Each task can be run from the commandline too
@@ -23,7 +23,7 @@ var mini = express();
 
 //================================= ROUTES ==
 // bring in the lib folder and pass it the mini instance
-var routes = require('./lib')(mini);
+require('./lib')(mini);
 
 //================================= SERVER LISTEN ==
 mini.listen(config.system.PORT);

@@ -10,7 +10,7 @@
 
 /*================================= MODULE DEPENDENCIES ==*/
 var fs = require('fs-extra');
-var config = require('../config');
+var config = require('../../config');
 
 /**
  * Set the time the Mini's server was started

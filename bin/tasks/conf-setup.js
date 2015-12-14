@@ -10,8 +10,7 @@
 
 /*================================= MODULE DEPENDENCIES ==*/
 var fs = require('fs-extra');
-var config = require('../config');
-
+var config = require('../../config');
 /**
  * Check and correct bitcoind rpc password
  * On boot we check if the config.json password is correct with bitcoin.conf
@@ -20,6 +19,8 @@ var config = require('../config');
  
 // Get contents from bitcoin.conf on the Mini
 module.exports = function btcConf() {
+
+	//var config = require('./config');
 	
 	fs.readFile('/home/'+config.system.root+'/.bitcoin/bitcoin.conf','utf8', function (err, data) {
 
