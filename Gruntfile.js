@@ -5,28 +5,20 @@ module.exports = function(grunt) {
 	less: {
 		development: {
 			options: {
-			    paths: ["app/public/css/less/"]
+			    paths: ["static/css/less/"]
 			},
 			files: {
-			    "app/public/css/guerilla.css": "app/public/css/less/styles.less"
+			    "static/css/guerilla.css": "static/css/less/styles.less"
 			}
-		}
-	},
-	watch: {
-		less: {
-			
 		}
 	}
 	});
 
 	// Load packages
 	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-
 	// Default tasks
 	grunt.registerTask('default', [
-		'less',
-		'watch'
+		'less'
 	]);
 
 };
