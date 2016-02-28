@@ -29,7 +29,9 @@ angular.module('guerilla')
             // build array of get requests from our APIs
             $q.all([ 
                 $http.get('http://'+ window.location.hostname +':8081/os/system/all'),
-                $http.get('http://'+ window.location.hostname +':8081/net/stat')
+                $http.get('http://'+ window.location.hostname +':8081/net/stat'),
+                $http.get('http://'+ window.location.hostname +':8081/whoami'),
+                $http.get('http://'+ window.location.hostname +':8081/gorillaver')
             ])
 
             // do this after all the get requests are completed
@@ -49,8 +51,12 @@ angular.module('guerilla')
                 $scope.tileinfo.ramtotal = (data[0].data.memory.total/1000000).toFixed(3);
                 $scope.tileinfo.ramfree = (data[0].data.memory.free/1000000).toFixed(3);
                 // download upload
-                $scope.tileinfo.download = data.data.interfaces[0].traffic.total.rx*1.04858;
-                $scope.tileinfo.free = data.data.interfaces[0].traffic.total.tx*1.04858;
+                $scope.tileinfo.download = (data[1].data.interfaces[0].traffic.months[0].rx*1e-6).toPrecision(5); //convert from kilobytes to gigabytes
+                $scope.tileinfo.free = (data[1].data.interfaces[0].traffic.months[0].tx*1e-6).toPrecision(5); //convert from kilobytes to gigabytes
+                // username
+                $scope.tileinfo.username = data[2].data;
+                // gorilla version
+                $scope.tileinfo.gorillaver = data[3].data;
                 
             }); // .then()
         } // loader()
